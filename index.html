@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda de Camisetas de Fútbol</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="text21">KickWear</h1>
+      <p class="text22">Equipos nacionales e internacionales</p>
+    </header>
+
+    <nav>
+      <a href="tienda.html">Inicio</a>
+      <a href="catalogo.html">Camisetas</a>
+      <a href="#">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+
+    <main>
+      <section class="hero-kickwear">
+        <div class="hero-contenido">
+          <h1>Vestí la pasión por el deporte</h1>
+          <p>Camisetas inspiradas en tu equipo, tu estilo, tu juego.</p>
+          <a href="#productos" class="btn-hero">Ver colección</a>
+        </div>
+      </section>
+
+      <h2 class="text22c">Camisetas destacadas</h2>
+      <div class="productos">
+        <div class="producto">
+          <img src="IMG/jd_757030_a.webp" alt="Camiseta Real Madrid" />
+          <h3 class="text21">AC Milan</h3>
+          <h4>29,99USD</h4>
+          <p>
+            <button onclick="agregarAlCarrito('Gorra Equipo', 15)">
+              Agregar
+            </button>
+          </p>
+        </div>
+        <div class="producto">
+          <img src="IMG/jd_752577_c.webp" alt="Camiseta Barcelona" />
+          <h3 class="text21">PSG</h3>
+          <h4>29,99USD</h4>
+          <p>
+            <button onclick="agregarAlCarrito('Gorra Equipo', 15)">
+              Agregar
+            </button>
+          </p>
+        </div>
+        <div class="producto">
+          <img src="IMG/jd_757555_a.webp" alt="Camiseta PSG" />
+          <h3 class="text21">Real madrid</h3>
+          <h4>29,99USD</h4>
+          <p>
+            <button onclick="agregarAlCarrito('Gorra Equipo', 15)">
+              Agregar
+            </button>
+          </p>
+        </div>
+        <div class="producto">
+          <img src="IMG/jd_762163_a.webp" alt="Camiseta Argentina" />
+          <h3 class="text21">FC Barcelona</h3>
+          <h4>29,99USD</h4>
+          <p>
+            <button onclick="agregarAlCarrito('Gorra Equipo', 15)">
+              Agregar
+            </button>
+          </p>
+        </div>
+        <section class="sobre-kickwear">
+          <div class="contenedor-kickwear">
+            <h2 class="text21">🔥 Sobre KickWear</h2>
+            <p class="frase-impacto">
+              Más que camisetas. Somos actitud en movimiento.
+            </p>
+            <p>
+              En <strong>KickWear</strong>, cada diseño nace de la pasión por el
+              fútbol y el deporte. Creamos camisetas que no solo se ven bien,
+              sino que <em>hablan por vos</em>: de tu equipo, tu energía, tu
+              historia.
+            </p>
+            <p>
+              Usamos materiales de alto rendimiento, colores que destacan y
+              estilos que combinan lo clásico con lo urbano. Ya sea en la
+              cancha, en la grada o en la calle, queremos que sientas que vestís
+              parte de tu identidad.
+            </p>
+            <p class="mensaje-final">
+              ⚽ KickWear no sigue la moda. La redefine.
+            </p>
+          </div>
+        </section>
+       
+
+         <div class="barra-superior">
+          
+
+          <div class="carrito-icono">
+            <a href="carrito.html"> 🛒 <span id="contador-carrito">0</span> </a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Botón fijo del carrito -->
+
+    <script>
+      const carrito = {};
+
+      function agregarAlCarrito(nombre, precio) {
+        if (carrito[nombre]) {
+          carrito[nombre].cantidad++;
+        } else {
+          carrito[nombre] = { precio: precio, cantidad: 1 };
+        }
+        actualizarCarrito();
+      }
+
+      function eliminarProducto(nombre) {
+        delete carrito[nombre];
+        actualizarCarrito();
+      }
+
+      function cambiarCantidad(nombre, cantidad) {
+        cantidad = parseInt(cantidad);
+        if (cantidad <= 0 || isNaN(cantidad)) {
+          eliminarProducto(nombre);
+        } else {
+          carrito[nombre].cantidad = cantidad;
+        }
+        actualizarCarrito();
+      }
+
+      function actualizarCarrito() {
+        const tbody = document.querySelector("#tabla-carrito tbody");
+        tbody.innerHTML = "";
+        let total = 0;
+        let totalItems = 0;
+
+        for (const nombre in carrito) {
+          const item = carrito[nombre];
+          const subtotal = item.precio * item.cantidad;
+          total += subtotal;
+          totalItems += item.cantidad;
+
+          const tr = document.createElement("tr");
+
+          tr.innerHTML = `
+        <td>${nombre}</td>
+        <td>$${item.precio}</td>
+        <td><input type="number" min="1" value="${item.cantidad}" onchange="cambiarCantidad('${nombre}', this.value)"></td>
+        <td>$${subtotal}</td>
+        <td><button onclick="eliminarProducto('${nombre}')">X</button></td>
+      `;
+
+          tbody.appendChild(tr);
+        }
+        document.getElementById("total").textContent = `Total: $${total}`;
+        document.getElementById("hnr3kp25u").textContent = totalItems;
+      }
+
+      function irAlCarrito() {
+        document
+          .getElementById("seccion-carrito")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+    <footer>
+      <p>
+        © 2025 Tienda de Camisetas Deportivas. Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>

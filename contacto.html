@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contacto | KickWear</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        background-color: #fdfdfd;
+        color: #222;
+      }
+
+      header {
+        background-color: #490101;
+        padding: 20px;
+        text-align: center;
+        color: white;
+      }
+
+      .H342 {
+        font-family: "Bebas Neue", sans-serif;
+        font-size: 4.5rem;
+        margin: 0;
+        text-align: center;
+      }
+
+      .contacto-container {
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .contacto-container h2 {
+        font-size: 2rem;
+        color: #490101;
+        font-family: "Bebas Neue", sans-serif;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      input,
+      textarea {
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-size: 1rem;
+      }
+
+      textarea {
+        resize: vertical;
+        height: 120px;
+      }
+
+      button {
+        background-color: #490101;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background-color: #7b1717;
+      }
+
+      .info-contacto {
+        margin-top: 30px;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      .info-contacto p {
+        margin: 8px 0;
+      }
+
+      @media (max-width: 600px) {
+        .contacto-container {
+          margin: 20px;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1 class="text21">KickWear</h1>
+      <p class="text22">Equipos nacionales e internacionales</p>
+    </header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Camisetas</a>
+      <a href="#">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <h1 class="H342">Contáctanos</h1>
+    <main class="contacto-container">
+      <h2>¿Tenés alguna consulta o sugerencia?</h2>
+      <form onsubmit="enviarMensaje(); return false;">
+        <input type="text" placeholder="Tu nombre" required />
+        <input type="email" placeholder="Tu correo electrónico" required />
+        <textarea placeholder="Escribí tu mensaje..." required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+
+      <div class="info-contacto">
+        <p><strong>Correo:</strong> contacto@kickwear.com</p>
+        <p><strong>Ubicación:</strong> San José, Cos</p>
+      </div>
+    </main>
+  </body>
+</html>

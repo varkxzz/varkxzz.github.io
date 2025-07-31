@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="text21">KickWear</h1>
+      <p class="text22">Equipos nacionales e internacionales</p>
+    </header>
+
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Camisetas</a>
+      <a href="#">Ofertas</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+    <main>
+      <div class="barra-superior">
+        <div class="filtro-anio">
+          <label for="filtro-anio-select">Filtrar por año:</label>
+          <select id="filtro-anio-select" onchange="filtrarPorAnio()">
+            <option value="todos">Todos</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="retro">Retro</option>
+          </select>
+        </div>
+
+        <div class="carrito-icono">
+          <a href="carrito.html"> 🛒 <span id="contador-carrito">0</span> </a>
+        </div>
+      </div>
+      <section class="catalogo-kickwear" id="productos">
+        <h2>Nuestra Colección</h2>
+        <div class="catalogo-grid">
+          <div class="producto-card">
+            <img src="IMG/crc.webp" alt="Camisa Local" />
+            <h2>CRC</h2>
+            <h3>Camisa Local 2024</h3>
+            <p>$25.00</p>
+            <button onclick="agregarAlCarrito('Camisa Local 2024', 25)">
+              Agregar al carrito
+            </button>
+          </div>
+
+          <div class="producto-card" data-anio="2024">
+            <img src="IMG/psg.webp" alt="Camisa Visitante" />
+            <h2>PSG</h2>
+
+            <h3>Camisa Local 2025/2026</h3>
+            <p>$25.00</p>
+
+            <button onclick="agregarAlCarrito('Camisa Visitante 2024', 25)">
+              Agregar al carrito
+            </button>
+          </div>
+
+          <div class="producto-card">
+            <img src="IMG/abrca2.webp" alt="Camisa Retro" />
+            <h2>BARCELONA</h2>
+            <h3>Camisa Retro</h3>
+            <p>$30.00</p>
+            <button onclick="agregarAlCarrito('Camisa Retro', 30)">
+              Agregar al carrito
+            </button>
+          </div>
+
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+          <div class="producto-card">
+            <img src="IMG/mu2.webp" alt="Camisa Alterna" />
+            <h2>MANCHESTER UNITED</h2>
+            <h3>Camisa Alterna</h3>
+            <p>$28.00</p>
+            <button onclick="agregarAlCarrito('Camisa Alterna', 28)">
+              Agregar al carrito
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      function filtrarPorAnio() {
+        const anioSeleccionado =
+          document.getElementById("filtro-anio-select").value;
+        const productos = document.querySelectorAll(".producto-card");
+
+        productos.forEach((producto) => {
+          const anio = producto.getAttribute("data-anio");
+          if (anioSeleccionado === "todos" || anio === anioSeleccionado) {
+            producto.style.display = "block";
+          } else {
+            producto.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+  <footer>
+    <p>© 2025 Tienda de Camisetas Deportivas. Todos los derechos reservados.</p>
+  </footer>
+</html>
